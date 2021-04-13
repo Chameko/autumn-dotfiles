@@ -37,19 +37,19 @@ height = 28
 bottom = false
 offset-y = 4
 offset-x = 2%
-
+fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 radius = 10
-font-0 = Hack Nerd Font:style=Bold:size=12;2
+font-0 = Hack Nerd Font:style=Bold:size=10;2
 font-1 = Hack Nerd Font:style=Bold:size=19;4
 font-2 = Hack Nerd Font:style=Bold:size=25;4
 
-
-modules-left = appl L1 wksp LS L2
+enable-ipc = true
+modules-left = appl L1 wksp L2 spotify spotify-prev spotify-play-pause spotify-next L3
 modules-center = title
-modules-right = R1 network R2 pulseaudio R3 battery R4 date R5 power
+modules-right = R1 network R2 pulseaudio R3 battery R4 date
 
 
 tray-position = none
@@ -69,33 +69,25 @@ padding = 1
 
 pin-workspaces = true
 enable-click = true
-icon-0 = Terminal;
-icon-1 = Web;爵
-icon-2 = Code;
-icon-3 = Reference;
-icon-4 = Music;
-icon-5 = Chat;
-icon-6 = Video;辶
 
-icon-default = 
+icon-default = 祿
 
 format = <label-state>
 
-label-active = %name% %icon%
+label-active = 綠
 label-active-foreground = ${colors.foreground}
-label-active-background = ${colors.yellow}
-label-active-padding = 2
-
+label-active-background = ${colors.orange}
+label-active-padding = 1
 
 label-occupied = %icon%
 label-occupied-background = ${colors.orange}
 label-occupied-foreground = ${colors.foreground}
-label-occupied-padding = 2
+label-occupied-padding = 1
 
 label-urgent = %icon%
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.green}
-label-urgent-padding = 2
+label-urgent-foreground = ${colors.yellow}
+label-urgent-background = ${colors.foreground}
+label-urgent-padding = 1
 
 label-empty = %icon%
 label-empty-foreground = ${colors.foreground}
@@ -152,8 +144,8 @@ interface= wlp4s0
 format-background = ${colors.green}
 format-padding = 1
 
-format-connected = <label-connected>
-format-disconnected = <label-disconnected>
+format-connected = %{A1:nm-connection-editor:}<label-connected>%{A}
+format-disconnected = %{A1:nm-connection-editor:}<label-disconnected>%{A}
 format-connected-background = ${colors.green}
 format-disconnected-background = ${colors.green}
 format-connected-padding = 1
@@ -206,8 +198,9 @@ ramp-capacity-5 = 
 [module/date]
 type = internal/date
 interval = 5
-padding = 1
+foramt-padding = 1
 format-background = ${colors.red}
+format-padding = 1
 
 date = "%d-%m-%Y"
 
@@ -237,6 +230,48 @@ content-foreground = ${colors.alt-foreground}
 content-padding = 1
 ;***********************************
 
+[module/spotify]
+type = custom/script
+tail = true
+format-prefix = "阮 "
+format = <label>
+label = %output:0:10:...%
+exec = ./scripts/get_spotify_status.sh
+format-background = ${colors.yellow}
+format-foreground = ${colors.foreground}
+format-padding = 1
+;***********************************
+
+[module/spotify-prev]
+type = custom/script
+exec = echo "玲"
+format = <label>
+click-left = playerctl previous spotify
+format-background = ${colors.yellow}
+format-foreground = ${colors.foreground}
+format-padding = 1
+;***********************************
+
+[module/spotify-play-pause]
+type = custom/ipc
+hook-0 = echo "契"
+hook-1 = echo ""
+initial = 1
+click-left = playerctl play-pause spotify
+format-background = ${colors.yellow}
+format-foreground = ${colors.foreground}
+format-padding = 1
+;***********************************
+
+[module/spotify-next]
+type = custom/script
+exec = echo "怜"
+format = <label>
+click-left = playerctl next spotify
+format-background = ${colors.yellow}
+format-foreground = ${colors.foreground}
+format-padding = 1
+
 ;======================= Sperators ========================
 
 [module/L1]
@@ -253,18 +288,28 @@ content-offset = -10
 type = custom/text
 content = 
 
-content-offset = 10
-content-background = ${colors.background}
+content-offset = -11
+content-background = ${colors.yellow}
 content-foreground = ${colors.orange}
 content-font = 2
 content-padding = 0
+
+[module/L3]
+type = custom/text
+content = 
+
+content-background = ${colors.background}
+content-foreground = ${colors.yellow}
+content-font = 2
+content-padding = 0
+content-offset = -1
 
 [module/LS]
 type = custom/text
 content = ﮋ
 
 content-offset = -12
-content-background = ${colors.background}
+content-background = ${colors.yellow}
 content-foreground = ${colors.orange}
 content-font = 3
 content-padding = 0
