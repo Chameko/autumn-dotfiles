@@ -16,25 +16,27 @@ configuration {
 }
     
 * {
-	background:						#2d383a;
-	foreground:						#04dc6e;
-	bordercolor:					#b203dd;
-	altcolor:						#06bcca;
-	accent:							#F38602;
+	background:						#DE4421;
+	foreground:						#2D383A;
+	bordercolor:					#DE4421;
+	altcolor:						#97B814;
+	accent:							#F2E418;
 	altforeground:					#596f73;
-	altbackground:					#435356;
+	altbackground:					#F0A11A;
 }
 
 window {
 	border-color:				@bordercolor;
     border:     				3;
-    border-radius:				0;
+    border-radius:				15;
     padding:   					1;
-    width:						45%;
-    location:					center;
+    width:						25%;
+    height:						95%;
+    location:					west;
     background-color:			@background;
-    x-offset:					0;
-    y-offset:					0;
+    x-offset:					2%;
+    y-offset:					1.6%;
+    radius:						15px;
 }
 
 prompt {
@@ -46,13 +48,14 @@ prompt {
 
 entry {
 	background-color:			@altbackground;
-	text-color:					@altcolor;
-	placeholder-color:			@foreground;
+	text-color:					@foreground;
+	placeholder-color:			@bordercolor;
 	expand:						true;
 	placeholder:				"Search";
 	spacing:					0;
 	padding:					0.1% 0% 0% 0%;
 	blink:						true;
+	radius:						10px;
 }
 
 case-indicator {
@@ -109,6 +112,7 @@ element {
 	orientation:				horizontal;
 	border-radius:				0%;
 	padding:					1% 0.5% 1% 0.5%;
+	radius:						10;
 }
 
 element-icon {
@@ -124,7 +128,7 @@ element-text {
 }
 
 element-selected {
-	background-color:			@foreground;
+	background-color:			@accent;
 	text-color:					@background;
 }
 
@@ -144,8 +148,8 @@ element normal.active {
 }
 
 element selected.normal {
-	background-color:			@foreground;
-	text-color:					@altbackground;
+	background-color:			@accent;
+	text-color:					@bordercolor;
 }
 
 element selected.urgent {
