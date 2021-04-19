@@ -10,7 +10,9 @@ hc emit_hook reload
 
 polybar autumn &
 feh --bg-scale ~/Wallpapers/autumn &
+dunst &
 discord &
+picom &
 nm-applet &
 
 # Keybindings
@@ -24,6 +26,9 @@ hc keybind $Mod-Return spawn $myTerm
 hc keybind $Mod-space spawn rofi -show drun
 hc keybind $Mod-Shift-p spawn pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo +5%
 hc keybind $Mod-Shift-o spawn pactl set-sink-volume alsa_output.pci-0000_00_1b.0.analog-stereo -5%
+
+hc keybind $Mod-shift-greater set frame_border_width 3
+hc keybind $Mod-shift-less	  set frame_border_width 3
 
 hc keybind $Mod-Shift-q		quit
 hc keybind $Mod-Shift-c		close
