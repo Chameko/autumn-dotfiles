@@ -8,6 +8,12 @@ This theme uses:
 1. Polybar for the bar
 2. Herbsluftwm as the window manager
 3. Rofi as the application launcher
+4. Kitty as the terminal
+5. Picom as the compositor
+6. Dunst for notifications
+7. Feh for the background
+8. Discord (in herbstluftwm config)
+9. Network manager applet (in herbstluftwm config)
 
 ## Colours
 The theme uses a red, yellow, orange and green with a dark grey as the background
