@@ -11,8 +11,8 @@ This theme uses:
 
 ## Colours
 The theme uses a red, yellow, orange and green with a dark grey as the background
-Red: 
-Yellow: 
-Orange: 
-Green: 
-Grey: 
+Red: #DE4421 
+Yellow: #F2E418 
+Orange: #F0A11A 
+Green: #97B814 
+Grey:  #2D383A 
