@@ -1,6 +1,6 @@
 # Autumn Dotfiles
 ## Important
-This repo has been archived as I've moveed all my dotfiles to 
+This repo has been archived as I've moveed all my dotfiles to https://github.com/Chameko/dotfiles.git
 
 ## Inspiration
 I was working on another theme when I noticed the abundant use of green and yellow as well as the season being Autumn so I decided to make this theme
